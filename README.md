@@ -9,9 +9,9 @@
 
 sentences ::= class_declaration
 
-class_declaration ::= <class> end class_declaration | λ
+class_declaration ::= class end class_declaration | λ
 
-class ::= class NAME
+class ::= "class" NAME
 
 end ::= ; | {content};
 
