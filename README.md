@@ -7,21 +7,21 @@
 
 **TYPE** – тип переменной языка c++(int, bool, float, double, char)
 
-<sentences> ::= <class_declaration>
+sentences ::= class_declaration
 
-<class_declaration> ::= <class><end><class_declaration> | λ
+class_declaration ::= <class> end class_declaration | λ
 
-<class> ::= class NAME
+class ::= class NAME
 
-<end> ::= ; | {<content>};
+end ::= ; | {content};
 
-<content> ::= <private_block><declaration_block><content> | λ
+content ::= private_block declaration_block content | λ
 
-<private_block> ::= private | public | protected | λ
+private_block ::= private | public | protected | λ
 
-<declaration_block> ::= <type> VAR;
+declaration_block ::= type VAR;
 
-<type> ::= NAME | TYPE
+type ::= NAME | TYPE
 
 ## Сборка:
 1. Написать команду:
