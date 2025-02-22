@@ -21,7 +21,6 @@
 \}";"                                               {return LBRACE_SEM;}
 [A-Za-z][A-Za-z0-9_]+                               {yylval = strdup(yytext); return NAME;}
 [A-Za-z]                                            {yylval = strdup(yytext); return VAR;}
-"\n"                                                {printf("Конец предложения\n"); return EOS;}
 [ \t]+                                              {}
 .                                                   {}
 %%
