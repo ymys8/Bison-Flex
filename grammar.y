@@ -41,6 +41,17 @@ void printInfo()
         }
     }
 }
+bool findName(const char* type)
+{
+    for (int i = 0; i < class_count; i++) 
+    {
+        if (strcmp(classes[i].name, type) == 0) 
+        {
+            return true;
+        }
+    }
+    return false;
+}
 %}
 
 %token NAME
@@ -90,7 +101,13 @@ declaration_block   :   type VAR SEMICOLON {
                             current_class->var_count++; 
                         }
                     ;
-type                :   NAME
+type                :   NAME {
+                            if (!findName(strdup($1)))
+                            {
+                                yyerror("Тип переменной не определен\n");
+                                exit(1);
+                            }
+                        }
                     |   TYPE
                     ;
 %%
